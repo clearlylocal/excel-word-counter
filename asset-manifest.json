@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/excel-word-counter/static/css/main.5a38f798.chunk.css",
-    "main.js": "/excel-word-counter/static/js/main.1389a72c.chunk.js",
-    "main.js.map": "/excel-word-counter/static/js/main.1389a72c.chunk.js.map",
+    "main.js": "/excel-word-counter/static/js/main.cd24c84a.chunk.js",
+    "main.js.map": "/excel-word-counter/static/js/main.cd24c84a.chunk.js.map",
     "runtime-main.js": "/excel-word-counter/static/js/runtime-main.34dbee10.js",
     "runtime-main.js.map": "/excel-word-counter/static/js/runtime-main.34dbee10.js.map",
     "static/css/2.7b1ca116.chunk.css": "/excel-word-counter/static/css/2.7b1ca116.chunk.css",
@@ -19,6 +19,6 @@
     "static/css/2.7b1ca116.chunk.css",
     "static/js/2.3a95adb0.chunk.js",
     "static/css/main.5a38f798.chunk.css",
-    "static/js/main.1389a72c.chunk.js"
+    "static/js/main.cd24c84a.chunk.js"
   ]
 }

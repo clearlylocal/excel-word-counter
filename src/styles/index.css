@@ -98,3 +98,15 @@ main.container {
 th {
 	vertical-align: bottom;
 }
+
+.table-scroller {
+	overflow: auto;
+}
+
+.table-scroller-x {
+	max-width: 100%;
+}
+
+.table-scroller-y {
+	max-height: 200px;
+}

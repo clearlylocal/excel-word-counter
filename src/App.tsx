@@ -10,7 +10,7 @@ export const App: FC = () => {
 					<img
 						className='site-title'
 						alt='Clearly Local'
-						src='./cl-logo-small.png'
+						src={process.env.PUBLIC_URL + '/cl-logo-small.png'}
 					/>
 
 					<NavLink exact activeClassName='active' to='/'>

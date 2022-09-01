@@ -1,8 +1,7 @@
 import { FC, useEffect, useMemo, useState } from 'react'
 import { useForm } from 'react-hook-form'
-import './App.css'
 import ExcelJS from 'exceljs'
-import { parseExcelFiles } from './parseExcelFiles'
+import { parseExcelFiles } from '../parseExcelFiles'
 
 export type Results = {
 	countPerLinguist: Record<
@@ -100,60 +99,64 @@ const ResultsDisplay: FC<{ results: Results }> = ({
 		<div>
 			<h2>Rows counted per file</h2>
 
-			<table>
-				<thead>
-					<tr>
-						<th>File</th>
-						<th align='right'>Rows counted</th>
-					</tr>
-				</thead>
-				<tbody>
-					{Object.entries(rowsCountedPerFile).map(
-						([file, num], i) => (
-							<tr key={i}>
-								<td>{file}</td>
-								<td align='right'>{num}</td>
-							</tr>
-						),
-					)}
-				</tbody>
-			</table>
+			<div className='table-scroller table-scroller-y'>
+				<table>
+					<thead>
+						<tr>
+							<th>File</th>
+							<th align='right'>Rows counted</th>
+						</tr>
+					</thead>
+					<tbody>
+						{Object.entries(rowsCountedPerFile).map(
+							([file, num], i) => (
+								<tr key={i}>
+									<td>{file}</td>
+									<td align='right'>{num}</td>
+								</tr>
+							),
+						)}
+					</tbody>
+				</table>
+			</div>
 
 			<hr />
 
 			<h2>Count per linguist</h2>
 
-			<table>
-				<thead>
-					<tr>
-						<th rowSpan={2}>Linguist</th>
-						<th colSpan={languages.length} align='right'>
-							Languages
-						</th>
-					</tr>
-					<tr>
-						{languages.map((l, i) => (
-							<th key={i} align='right'>
-								{l}
+			<div /* className='table-scroller table-scroller-x' */>
+				<table>
+					<thead>
+						<tr>
+							<th rowSpan={2}>Linguist</th>
+							<th colSpan={languages.length} align='right'>
+								Languages
 							</th>
-						))}
-					</tr>
-				</thead>
-				<tbody>
-					{Object.entries(countPerLinguist).map(
-						([linguist, langData], i) => (
-							<tr key={i}>
-								<td>{linguist}</td>
-								{languages.map((l, j) => (
-									<td key={j} align='right'>
-										{langData[l]}
-									</td>
-								))}
-							</tr>
-						),
-					)}
-				</tbody>
-			</table>
+						</tr>
+						<tr>
+							{languages.map((l, i) => (
+								<th key={i} align='right'>
+									{l}
+								</th>
+							))}
+						</tr>
+					</thead>
+					<tbody>
+						{Object.entries(countPerLinguist).map(
+							([linguist, langData], i) => (
+								<tr key={i}>
+									<td>{linguist}</td>
+									{languages.map((l, j) => (
+										<td key={j} align='right'>
+											{langData[l]}
+										</td>
+									))}
+								</tr>
+							),
+						)}
+					</tbody>
+				</table>
+			</div>
 		</div>
 	)
 }

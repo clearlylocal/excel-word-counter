@@ -1,6 +1,6 @@
 import ExcelJS from 'exceljs'
 import { wordCount } from './wordCount'
-import { Config, Results, getLangName, getRows } from './Home'
+import { Config, Results, getLangName, getRows } from './pages/Home'
 import JSZip from 'jszip'
 
 const flattenUnzip = async (files: FileList | File[]) => {
@@ -78,9 +78,9 @@ export async function parseExcelFiles(
 									)
 								) {
 									for (const row of rows) {
-										if (!row[langCode]) {
-											continue
-										}
+										// if (!row[langCode]) {
+										// 	continue
+										// }
 
 										const wc = wordCount(row[config.srcCol])
 

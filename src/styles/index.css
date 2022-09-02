@@ -110,3 +110,17 @@ th {
 .table-scroller-y {
 	max-height: 200px;
 }
+
+.full-page {
+	display: flex;
+	flex-direction: column;
+	min-height: calc(100vh - 1px);
+}
+
+main.container {
+	flex: 1 0 auto;
+}
+
+footer.container {
+	margin-bottom: 20px;
+}

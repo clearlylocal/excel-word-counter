@@ -1,7 +1,10 @@
 import ExcelJS from 'exceljs'
-import { wordCount } from './wordCount'
+import { countWords } from './wordCount'
 import { Config, Results, getLangName, getRows } from './pages/Home'
 import JSZip from 'jszip'
+
+// debug
+;(window as any).countWords = countWords
 
 const flattenUnzip = async (files: FileList | File[]) => {
 	const all = await Promise.all(
@@ -41,7 +44,7 @@ export async function parseExcelFiles(
 	if (!files.length) return null
 
 	const results: Results = {
-		countPerLinguist: {},
+		countPerUser: {},
 		rowsCountedPerFile: {},
 		languages: {},
 	}
@@ -73,8 +76,8 @@ export async function parseExcelFiles(
 
 								if (
 									headers &&
-									[config.linguistCol, config.srcCol].every(
-										(x) => headers.includes(x),
+									[config.userCol, config.srcCol].every((x) =>
+										headers.includes(x),
 									)
 								) {
 									for (const row of rows) {
@@ -82,22 +85,24 @@ export async function parseExcelFiles(
 										// 	continue
 										// }
 
-										const wc = wordCount(row[config.srcCol])
+										const wordCount = countWords(
+											row[config.srcCol],
+										)
 
-										if (!wc) {
+										if (!wordCount) {
 											continue
 										}
 
-										results.countPerLinguist[
-											row[config.linguistCol]
+										results.countPerUser[
+											row[config.userCol]
 										] = {
-											...results.countPerLinguist[
-												row[config.linguistCol]
+											...results.countPerUser[
+												row[config.userCol]
 											],
 											[langCode]:
-												(results.countPerLinguist[
-													row[config.linguistCol]
-												]?.[langCode] ?? 0) + wc,
+												(results.countPerUser[
+													row[config.userCol]
+												]?.[langCode] ?? 0) + wordCount,
 										}
 
 										results.languages[langCode] = true

@@ -4,8 +4,8 @@ import ExcelJS from 'exceljs'
 import { parseExcelFiles } from '../parseExcelFiles'
 
 export type Results = {
-	countPerLinguist: Record<
-		string, // linguistEmail
+	countPerUser: Record<
+		string, // userEmail
 		Record<
 			string, // languageCode
 			number // wordCount
@@ -61,7 +61,7 @@ const init = {
 	fileNameFormat: String.raw`Need_Translate_To_{{lang}}_for-`,
 
 	srcCol: 'eng',
-	linguistCol: 'user_name',
+	userCol: 'user_name',
 }
 
 export type Config = typeof init
@@ -91,7 +91,7 @@ const ResultsDisplay: FC<{ results: Results }> = ({
 }: {
 	results: Results
 }) => {
-	const { countPerLinguist, rowsCountedPerFile } = results
+	const { countPerUser, rowsCountedPerFile } = results
 
 	const languages = Object.keys(results.languages)
 
@@ -122,13 +122,13 @@ const ResultsDisplay: FC<{ results: Results }> = ({
 
 			<hr />
 
-			<h2>Count per linguist</h2>
+			<h2>Word count per user</h2>
 
 			<div /* className='table-scroller table-scroller-x' */>
 				<table>
 					<thead>
 						<tr>
-							<th rowSpan={2}>Linguist</th>
+							<th rowSpan={2}>User</th>
 							<th colSpan={languages.length} align='right'>
 								Languages
 							</th>
@@ -142,10 +142,10 @@ const ResultsDisplay: FC<{ results: Results }> = ({
 						</tr>
 					</thead>
 					<tbody>
-						{Object.entries(countPerLinguist).map(
-							([linguist, langData], i) => (
+						{Object.entries(countPerUser).map(
+							([user, langData], i) => (
 								<tr key={i}>
-									<td>{linguist}</td>
+									<td>{user}</td>
 									{languages.map((l, j) => (
 										<td key={j} align='right'>
 											{langData[l]}

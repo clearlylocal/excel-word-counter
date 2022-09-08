@@ -1,24 +1,24 @@
 {
   "files": {
     "main.css": "/excel-word-counter/static/css/main.6d75e940.chunk.css",
-    "main.js": "/excel-word-counter/static/js/main.711772bb.chunk.js",
-    "main.js.map": "/excel-word-counter/static/js/main.711772bb.chunk.js.map",
+    "main.js": "/excel-word-counter/static/js/main.7d30da7a.chunk.js",
+    "main.js.map": "/excel-word-counter/static/js/main.7d30da7a.chunk.js.map",
     "runtime-main.js": "/excel-word-counter/static/js/runtime-main.34dbee10.js",
     "runtime-main.js.map": "/excel-word-counter/static/js/runtime-main.34dbee10.js.map",
     "static/css/2.7b1ca116.chunk.css": "/excel-word-counter/static/css/2.7b1ca116.chunk.css",
-    "static/js/2.ed4a7748.chunk.js": "/excel-word-counter/static/js/2.ed4a7748.chunk.js",
-    "static/js/2.ed4a7748.chunk.js.map": "/excel-word-counter/static/js/2.ed4a7748.chunk.js.map",
+    "static/js/2.53a819eb.chunk.js": "/excel-word-counter/static/js/2.53a819eb.chunk.js",
+    "static/js/2.53a819eb.chunk.js.map": "/excel-word-counter/static/js/2.53a819eb.chunk.js.map",
     "index.html": "/excel-word-counter/index.html",
     "static/css/2.7b1ca116.chunk.css.map": "/excel-word-counter/static/css/2.7b1ca116.chunk.css.map",
     "static/css/main.6d75e940.chunk.css.map": "/excel-word-counter/static/css/main.6d75e940.chunk.css.map",
-    "static/js/2.ed4a7748.chunk.js.LICENSE.txt": "/excel-word-counter/static/js/2.ed4a7748.chunk.js.LICENSE.txt",
-    "static/media/instructions.37f02efc.md": "/excel-word-counter/static/media/instructions.37f02efc.md"
+    "static/js/2.53a819eb.chunk.js.LICENSE.txt": "/excel-word-counter/static/js/2.53a819eb.chunk.js.LICENSE.txt",
+    "static/media/instructions.5795dcfb.md": "/excel-word-counter/static/media/instructions.5795dcfb.md"
   },
   "entrypoints": [
     "static/js/runtime-main.34dbee10.js",
     "static/css/2.7b1ca116.chunk.css",
-    "static/js/2.ed4a7748.chunk.js",
+    "static/js/2.53a819eb.chunk.js",
     "static/css/main.6d75e940.chunk.css",
-    "static/js/main.711772bb.chunk.js"
+    "static/js/main.7d30da7a.chunk.js"
   ]
 }

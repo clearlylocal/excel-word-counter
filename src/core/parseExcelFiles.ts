@@ -1,9 +1,12 @@
 import ExcelJS from 'exceljs'
 import { countWords } from './wordCount'
-import { Config, Results, getLangName, getRows } from './pages/Home'
+import { getLangName } from '../pages/Home'
+import { getRows } from './getRows'
+import { Results } from '../types/Results'
 import JSZip from 'jszip'
 
 // debug
+import { Config } from './config'
 ;(window as any).countWords = countWords
 
 const flattenUnzip = async (files: FileList | File[]) => {
